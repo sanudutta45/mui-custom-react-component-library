@@ -1,26 +1,41 @@
 import React from 'react';
-import { Meta, Story } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 import Button from './Button';
-import { CustomButtonProps } from './Button.types';
 
-export default {
-    title: 'CustomButtonWrapper',
+const meta: Meta<typeof Button> = {
+    title: 'Custom Button',
     component: Button,
-} as Meta;
+    tags: ["autodocs"],
+    argTypes: {
+        color: {
+            control: { radio: true },
+            options: ["primary", "secondary"]
+        },
+        size: {
+            control: { radio: true },
+            options: ["small", "large"]
+        }
+    }
+}
 
-const Template: Story<CustomButtonProps> = (args) => <Button {...args} />;
+export default meta
 
+type Story = StoryObj<typeof meta>
 
-export const PrimaryLarge = Template.bind({});
-PrimaryLarge.args = {
-    color: 'primary',
-    size: 'large',
-    children: 'Click Me',
-};
+/** Button of color = 'primary' and size = 'large'  */
+export const PrimaryLarge: Story = {
+    args: {
+        color: 'primary',
+        size: 'large',
+        children: 'Click Me',
+    }
+}
 
-export const SecondarySmall = Template.bind({});
-SecondarySmall.args = {
-    color: 'secondary',
-    size: 'small',
-    children: 'Click Me Too',
-};
+/** Button of color = 'secondary' and size = 'small'  */
+export const SecondarySmall: Story = {
+    args: {
+        color: 'secondary',
+        size: 'small',
+        children: 'Click Me Too',
+    }
+}
