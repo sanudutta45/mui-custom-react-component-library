@@ -5,6 +5,7 @@ import TextField from "./TextField";
 const meta: Meta = {
     title: "Custom Text Field",
     component: TextField,
+    tags: ["autodocs"],
     argTypes: {
         error: {
             control: { type: 'radio' },
@@ -21,12 +22,14 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
+/** Default Text Input Field */
 export const DefaultTextField: Story = {
     args: {
         label: "Text Field"
     }
 }
 
+/** Input text field with error indication */
 export const WithError: Story = {
     args: {
         label: "Has Error",
@@ -34,6 +37,7 @@ export const WithError: Story = {
     }
 }
 
+/** Input text field with helper text */
 export const WithHelperText: Story = {
     args: {
         label: "Text Field",
@@ -41,6 +45,7 @@ export const WithHelperText: Story = {
     }
 }
 
+/** Disable Input text field */
 export const DisabledTextField: Story = {
     args: {
         label: "Disabled Text Field",
