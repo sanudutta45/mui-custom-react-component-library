@@ -2,6 +2,7 @@ import React, { FC } from 'react';
 import { Card as MuiCard, CardContent, Typography } from '@mui/material';
 import { CardProps } from './Card.types';
 
+/** Custom Card */
 const Card: FC<CardProps> = ({ title, content, ...rest }) => {
     return (
         <MuiCard {...rest}>
