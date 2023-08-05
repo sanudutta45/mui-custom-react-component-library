@@ -4,6 +4,7 @@ import Snackbar from "./Snackbar"
 const meta: Meta<typeof Snackbar> = {
     title: "Custom Snackbar",
     component: Snackbar,
+    tags: ["autodocs"],
     argTypes: {
         message: {
             control: { type: "text" }
@@ -23,6 +24,7 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
+/** Success Snackbar on top of MUI Snackbar Component */
 export const SuccessSnackbar: Story = {
     args: {
         message: "Success Message",
@@ -30,6 +32,8 @@ export const SuccessSnackbar: Story = {
         open: true
     }
 }
+
+/** Error Snackbar on top of MUI Snackbar Component */
 export const ErrorSnackbar: Story = {
     args: {
         message: "Error Message",
@@ -37,6 +41,8 @@ export const ErrorSnackbar: Story = {
         open: true
     }
 }
+
+/** Warning Snackbar on top of MUI Snackbar Component */
 export const WarningSnackbar: Story = {
     args: {
         message: "Warning Message",
@@ -44,6 +50,8 @@ export const WarningSnackbar: Story = {
         open: true
     }
 }
+
+/** Info Snackbar on top of MUI Snackbar Component */
 export const InfoSnackbar: Story = {
     args: {
         message: "Info Message",
