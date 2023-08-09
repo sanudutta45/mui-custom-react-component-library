@@ -57,4 +57,10 @@ npm run test
 yarn test
 ```
 
+To generate test coverage for the components, use the following commands:
+
+```bash
+npm run test-coverage-report
+```
+
 This will run the Jest test suite along with React Testing Library to ensure that the components behave correctly.
