@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import Modal from "./Modal"
-import React from "react";
+import React, { Fragment, useRef } from "react";
 const meta: Meta<typeof Modal> = {
     title: "Custom Modal",
     component: Modal,
@@ -20,6 +20,17 @@ type Story = StoryObj<typeof meta>
 
 /** Modal in open state */
 export const ModalOpen: Story = {
+    render: (args) => {
+        return (
+            <Fragment>
+                <div id="modal-temp-container" style={{ height: "350px" }}>
+                </div>
+                <Modal {...args}
+                    container={() => document.getElementById("modal-temp-container")}
+                />
+            </Fragment>
+        )
+    },
     args: {
         open: true,
         children: (
